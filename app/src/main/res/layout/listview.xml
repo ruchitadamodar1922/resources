@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#DDE9EE"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:text="18BCE0916.pdf"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/uploadedfilename"
+        android:paddingTop="20dp"
+        />
+
+    <ImageView
+        android:layout_width="45dp"
+        android:id="@+id/downloadimg"
+        android:layout_height="45dp"
+        android:layout_toLeftOf="@+id/deleteimg"
+        android:paddingTop="20dp"
+        android:layout_marginRight="20dp"
+        android:src="@mipmap/download"/>
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:paddingTop="20dp"
+        android:id="@+id/deleteimg"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/delete"/>
+
+</RelativeLayout>

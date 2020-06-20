@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC9B7"
+    tools:context=".otpActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today,"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11"
+        android:textSize="20dp"
+        android:id="@+id/date"
+        android:layout_marginTop="70dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi, Ruchita"
+        android:id="@+id/settingname"
+        android:textSize="28dp"
+        android:fontFamily="@font/roboto_light"
+        android:textColor="#000000"
+        android:layout_marginTop="270dp"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make it secure"
+        android:textSize="28dp"
+        android:fontFamily="@font/roboto_light"
+        android:textColor="#000000"
+        android:layout_marginTop="310dp"
+        android:layout_centerHorizontal="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="450dp"
+        android:paddingBottom="50dp"
+        android:paddingTop="30dp"
+        android:background="@drawable/rectangle"
+        android:isScrollContainer="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter OTP"
+            android:layout_alignParentTop="true"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:paddingLeft="46dp" />
+
+        <EditText
+            android:id="@+id/otp"
+            android:layout_width="322dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="56dp"
+            android:background="@drawable/editbg"
+            android:hint="Phonenumber"
+            android:paddingLeft="25dp"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#000000"
+            android:textSize="14dp" />
+
+
+        <Button
+            android:id="@+id/verify"
+            android:layout_width="210dp"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttonbg"
+            android:text="VERIFY"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            app:elevation="40dp" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_Bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="168dp"
+       />
+
+
+</RelativeLayout>
