@@ -45,38 +45,42 @@
         android:textColor="#000000"
         android:layout_marginTop="310dp"
         android:layout_centerHorizontal="true" />
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="280dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="-2dp"
         android:layout_marginTop="450dp"
-        android:paddingBottom="50dp"
-        android:paddingTop="30dp"
+        android:layout_marginBottom="-2dp"
         android:background="@drawable/rectangle"
         android:isScrollContainer="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:paddingBottom="50dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter OTP"
             android:layout_alignParentTop="true"
-            android:textSize="24sp"
+            android:paddingLeft="46dp"
+            android:text="Enter OTP"
             android:textColor="#000000"
-            android:paddingLeft="46dp" />
+            android:textSize="24sp" />
+
 
         <EditText
             android:id="@+id/otp"
             android:layout_width="322dp"
             android:layout_height="42dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="35dp"
             android:background="@drawable/editbg"
             android:hint="Phonenumber"
             android:paddingLeft="25dp"
-            android:layout_centerHorizontal="true"
             android:textColorHint="#000000"
-            android:textSize="14dp" />
-
+            android:textSize="14dp"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/verify"
@@ -86,9 +90,12 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/buttonbg"
             android:text="VERIFY"
+            android:layout_marginTop="65dp"
             android:textColor="#ffffff"
             android:textSize="24dp"
-            app:elevation="40dp" />
+            app:elevation="40dp"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="116dp" />
 
     </RelativeLayout>
 

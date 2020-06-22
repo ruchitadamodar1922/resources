@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "665759065437",
+    "firebase_url": "https://talkiez-68288.firebaseio.com",
+    "project_id": "talkiez-68288",
+    "storage_bucket": "talkiez-68288.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665759065437:android:10e0cab7a9e2b23c69f4b4",
+        "android_client_info": {
+          "package_name": "com.example.resource"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665759065437-dve0qig3gl4di3181r0k44c3n6h2ako2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.resource",
+            "certificate_hash": "24e079de3f24249d49c0ca38a0c48d52531353d9"
+          }
+        },
+        {
+          "client_id": "665759065437-buk9622999tt8edkthukjm3m4quv8qmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8Wbeqd5c4tWClkQmxdHG9fQcTI2BUV_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665759065437-buk9622999tt8edkthukjm3m4quv8qmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

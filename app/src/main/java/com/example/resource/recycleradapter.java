@@ -10,11 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.BreakIterator;
+import java.util.ArrayList;
 import java.util.List;
 
 public class recycleradapter extends RecyclerView.Adapter<recycleradapter.myViewHolder>{
 
-    private List<String> files;
+    public recycleradapter(ArrayList<String> filenames) {
+        this.filenames = filenames;
+    }
+
+    private ArrayList<String> filenames;
 
     @NonNull
     @Override
@@ -26,14 +31,14 @@ public class recycleradapter extends RecyclerView.Adapter<recycleradapter.myView
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        String title=files.get(position);
+        String title=filenames.get(position);
         holder.uploadedfilename.setText(title);
 
     }
 
     @Override
     public int getItemCount() {
-        return files.size();
+        return filenames.size();
     }
 
     class myViewHolder extends RecyclerView.ViewHolder{
@@ -43,9 +48,9 @@ public class recycleradapter extends RecyclerView.Adapter<recycleradapter.myView
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            down=itemView.findViewById(R.id.downloadimg);
-            delete=itemView.findViewById(R.id.deleteimg);
-            uploadedfilename=itemView.findViewById(R.id.uploadedfilename);
+            down=(ImageView)itemView.findViewById(R.id.downloadimg);
+            delete=(ImageView)itemView.findViewById(R.id.deleteimg);
+            uploadedfilename=(TextView)itemView.findViewById(R.id.uploadedfilename);
 
         }
     }

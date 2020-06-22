@@ -44,6 +44,8 @@ import java.net.URL;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.Set;
 
 public class resourceActivity extends AppCompatActivity {
 
@@ -52,8 +54,10 @@ public class resourceActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor meditor;
     RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+    
+
     ImageView uploadbtn;
-    recycleradapter rad;
     ArrayList<String> filenames;
 
     Uri pdfuri;
@@ -71,10 +75,17 @@ public class resourceActivity extends AppCompatActivity {
         TextView textMonth = findViewById(R.id.day);
         textMonth.setText(Month);
 
+
+        recyclerView=(RecyclerView)findViewById(R.id.recycle);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
+
         filenames=new ArrayList<String>();
+        adapter=new recycleradapter(filenames);
+        recyclerView.setAdapter(adapter);
 
         sharedPreferences=getSharedPreferences("resources",Context.MODE_PRIVATE);
         meditor=sharedPreferences.edit();
+
 
         loggout=(ImageView)findViewById(R.id.loggout);
         uploadbtn=(ImageView) findViewById(R.id.uploadbtn);
@@ -161,6 +172,7 @@ public class resourceActivity extends AppCompatActivity {
         progressDialog.setTitle("Uploading.....");
         progressDialog.show();
 
+
         StorageReference reference=firebaseStorage.child("uploads/"+System.currentTimeMillis()+".pdf");
         reference.putFile(pdfuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -170,19 +182,17 @@ public class resourceActivity extends AppCompatActivity {
                 while (!uri.isComplete());
                 Uri url=uri.getResult();
                 String pdfn=Name(uri);
+                filenames.add(pdfn);
+
                 //String pdfname="hi";
                 uploader Uploader=new uploader(pdfn,url.toString());
                 firebaseDatabase.child(firebaseDatabase.push().getKey()).setValue(Uploader);
                 progressDialog.dismiss();
-                filenames.add(pdfn);
-                recyclerView=(RecyclerView)findViewById(R.id.recycle);
 
-                recyclerView.setLayoutManager(new LinearLayoutManager(resourceActivity.this, LinearLayoutManager.VERTICAL, true));
-
-                recyclerView.setAdapter(rad);
                 Toast.makeText(resourceActivity.this, "file uploaded", Toast.LENGTH_SHORT).show();
 
             }
+
 
             private String Name(Task<Uri> uri) {
                 AlertDialog.Builder alertDialogbuilder=new AlertDialog.Builder(resourceActivity.this);
@@ -211,4 +221,8 @@ public class resourceActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
 }
