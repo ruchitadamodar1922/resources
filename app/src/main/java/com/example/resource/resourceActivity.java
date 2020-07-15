@@ -84,12 +84,12 @@ public class resourceActivity extends AppCompatActivity {
 
         TextView textMonth = findViewById(R.id.day);
         textMonth.setText(Month);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         recyclerView = (RecyclerView) findViewById(R.id.recycle);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //loaddata();
         filenames= PrefConfig.loaddata(this);
         if (filenames == null) filenames = new ArrayList<>();
